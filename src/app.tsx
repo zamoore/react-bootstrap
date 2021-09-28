@@ -1,13 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './styles.css';
-import testImage from './test.jpeg';
-import Button from './button';
+
+import Home from './pages/home/page';
 
 const App = () => (
   <div>
-    <h1>Hello world</h1>
-    <img src={testImage} alt="It's a test" />
-    <Button />
+    <header>
+      <h1>React Boilerplate</h1>
+    </header>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   </div>
 );
 
