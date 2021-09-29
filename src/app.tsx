@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '@app/styles.css';
+import '@app/styles/styles.css';
 import '@app/icon-lib';
 import Home from '@pages/home/page';
 
