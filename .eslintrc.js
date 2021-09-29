@@ -5,6 +5,11 @@ module.exports = {
     sourceType: 'module',
   },
   settings: {
+    'import/resolver': {
+      webpack: {
+        config: './webpack/webpack.config.js',
+      },
+    },
     react: {
       version: 'detect',
     },

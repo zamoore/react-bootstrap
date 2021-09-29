@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import './styles.css';
+import '@app/styles.css';
 
-import Home from './pages/home/page';
+import Home from '@pages/home/page';
 
 const App = () => (
   <div>
