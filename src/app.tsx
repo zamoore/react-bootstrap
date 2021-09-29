@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@app/styles.css';
-
+import '@app/icon-lib';
 import Home from '@pages/home/page';
 
 const App = () => (
@@ -14,7 +15,10 @@ const App = () => (
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">
+                <FontAwesomeIcon icon="home" />
+                Home
+              </Link>
             </li>
           </ul>
         </nav>
