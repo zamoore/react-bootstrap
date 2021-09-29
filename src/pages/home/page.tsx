@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Home = () => (
   <section>
     <header>
-      <h2>
+      <h2 className="text-blue-500 font-semibold">
         <FontAwesomeIcon icon="home" />
         Home
       </h2>
