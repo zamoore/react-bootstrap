@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '@components/button/component';
 
 const Home = () => (
   <section>
@@ -10,6 +11,7 @@ const Home = () => (
       </h2>
     </header>
     <p>This is the home page</p>
+    <Button />
   </section>
 );
 
