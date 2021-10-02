@@ -1,15 +1,41 @@
-import React, { useState } from 'react';
+import React, { FunctionComponent, HTMLAttributes } from 'react';
 
-const Button = () => {
-  const [count, updateCount] = useState(0);
+export enum ButtonType {
+  Default = 'default',
+  Primary = 'primary',
+  Danger = 'danger',
+}
+
+const BUTTON_TYPE_CLASS_MAP: Record<ButtonType, string[]> = {
+  [ButtonType.Default]: ['bg-gray-100'],
+  [ButtonType.Primary]: ['bg-blue-600', 'text-white'],
+  [ButtonType.Danger]: ['bg-red-600', 'text-white'],
+};
+
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  buttonType?: ButtonType;
+}
+
+const Button: FunctionComponent<ButtonProps> = ({
+  children,
+  buttonType = ButtonType.Default,
+  ...props
+}: ButtonProps) => {
+  const classNameArr = [
+    'rounded',
+    'px-3',
+    'py-2',
+    ...BUTTON_TYPE_CLASS_MAP[buttonType],
+  ];
 
   return (
     <button
+      data-testid="button"
       type="button"
-      className="px-2 py-3 bg-red-100"
-      onClick={() => updateCount(count + 1)}
+      className={classNameArr.join(' ')}
+      {...props}
     >
-      Still still clicked {count} times
+      {children}
     </button>
   );
 };
