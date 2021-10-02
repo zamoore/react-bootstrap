@@ -1,10 +1,10 @@
+import React from 'react';
+
 import { render, screen } from '@testing-library/react';
-import { composeStories } from '@storybook/testing-react';
-import stories from '@components/button/stories';
 
-const { Primary } = composeStories(stories);
+import { Primary } from '@components/button/stories';
 
-test('renders primary button with default args', () => {
+it('renders the button in the primary state', () => {
   render(<Primary />);
   const buttonElement = screen.getByTestId('button');
   expect(buttonElement).not.toBeNull();
